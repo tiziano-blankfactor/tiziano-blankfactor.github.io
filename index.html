@@ -19,11 +19,10 @@
                 console.error("Cordova not loaded");
                 return;
             }
-            window.plugins.Payment.show('Payment external call works...!', 'long', () => {
-                    console.log('Payment Call success')
-                }, () => {
-                    console.log('Payment Call failed')
-                })
+
+            window.plugins.Payment.show('Payment', 100, "tforero0nm6n", "100", "1234", 
+                    () => { console.log('Payment Call success') }, 
+                    () => { console.log('Payment Call failed') })
         } 
     </script>
 </body>
