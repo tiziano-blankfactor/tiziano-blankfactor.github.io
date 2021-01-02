@@ -106,13 +106,10 @@
                 return;
             }
 
-            result = window.plugins.Payment.show('Payment', "100.0", 
+            window.plugins.Payment.show('Payment', "100.0", 
                                                 "tforero0nm6n", "100", "1234", 
-                                                () => { console.log('Payment Call success') }, 
-                                                () => { console.log('Payment Call failed') })
-            
-            console.log(result)
-            
+                                                function successPayment(result) { console.log('Payment Call success' + result); }, 
+                                                function errorPayment(error) { console.log('Payment Call failed' + error); })            
         } 
     </script>
 </body>
