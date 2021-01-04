@@ -101,15 +101,28 @@
 
     <script>
         window.pluginTest = ()=> {
+            // check if cordova is loaded to continue
             if (!window.cordova){
                 console.error("Cordova not loaded");
                 return;
             }
 
-            window.plugins.Payment.call('Payment', "100.0", 
-                                        "tforero0nm6n", "100", "1234", 
-                                        function successPayment(result) { console.log('Payment Call SUCCESS, payment UUID: ' + result); }, 
-                                        function errorPayment(error) { console.log('Payment Call FAILED, Error: ' + error); })            
+            // parameters device
+            merchantCode = "tforero0nm6n";
+            operatorCode = "100";
+            pin = "1234";
+            
+            // parameters transaction
+            transactionType = "Payment"; //Payment or Refund
+            transactionAmount = "100.00";   //Transaction amount, double as string
+
+            // plugin call
+            window.plugins.Payment.call(transactionType, transactionAmount, 
+                                        merchantCode, operatorCode, pin, 
+                                        function successPayment(result) { 
+                                            console.log('Payment Call SUCCESS, payment UUID: ' + result); }, 
+                                        function errorPayment(error) { 
+                                            console.log('Payment Call FAILED, Error: ' + error); })            
         } 
     </script>
 </body>
