@@ -106,10 +106,10 @@
                 return;
             }
 
-            window.plugins.Payment.show('Payment', "100.0", 
-                                                "tforero0nm6n", "100", "1234", 
-                                                function successPayment(result) { console.log('Payment Call SUCCESS: ' + result); }, 
-                                                function errorPayment(error) { console.log('Payment Call FAILED: ' + error); })            
+            window.plugins.Payment.call('Payment', "100.0", 
+                                        "tforero0nm6n", "100", "1234", 
+                                        function successPayment(result) { console.log('Payment Call SUCCESS, payment UUID: ' + result); }, 
+                                        function errorPayment(error) { console.log('Payment Call FAILED, Error: ' + error); })            
         } 
     </script>
 </body>
