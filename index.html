@@ -96,7 +96,7 @@
     
     <div class="container">
         <img src="https://www.prontomas.com/wp-content/uploads/2020/12/logo.svg" alt="Prontomas"></img>
-        <button class="btn rounded" onclick="pluginTest()"><span class="text-green">one-click payment</span></button>
+        <button class="btn rounded" onclick="testAuth()"><span class="text-green">one-click payment</span></button>
     </div>
 
     <script>
@@ -120,7 +120,7 @@
             window.plugins.Payment.call(transactionType, transactionAmount, 
                                         merchantCode, operatorCode, pin, 
                                         function successPayment(result) { 
-                                            console.log('Payment Call SUCCESS, payment UUID: ' + result); testAuth(); }, 
+                                            console.log('Payment Call SUCCESS, payment UUID: ' + result);}, 
                                         function errorPayment(error) { 
                                             console.log('Payment Call FAILED, Error: ' + error); })            
         }
